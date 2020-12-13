@@ -1,0 +1,2 @@
+-username uniqe constraints maken
+-mogelijkheid om 'vorige' te doen bij room lobby verwijderen

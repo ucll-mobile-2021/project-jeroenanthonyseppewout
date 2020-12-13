@@ -1,6 +1,6 @@
-# mobile_app_movies
+# movies_app
 
-Movie matching app.
+A new Flutter application.
 
 ## Getting Started
 

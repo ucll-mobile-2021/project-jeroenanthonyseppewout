@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "645964160014",
+    "project_id": "moviesapp-d0163",
+    "storage_bucket": "moviesapp-d0163.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645964160014:android:2cd250aea1f69ddbc1b05f",
+        "android_client_info": {
+          "package_name": "com.ucllmobile.movies_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645964160014-nm5hm8fq7em5g8k2062kfpaoa8t2u4vt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAkdmiGA99e4Mrb736mvNjQnpPhJRg6Vg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645964160014-nm5hm8fq7em5g8k2062kfpaoa8t2u4vt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
