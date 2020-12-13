@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
@@ -26,7 +27,7 @@ class LoginScreen extends StatelessWidget {
           Center(
             child: Container(
               width: 100.0,
-              child: TextFormField(
+              child: TextField(
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: 'Enter name',
@@ -62,11 +63,6 @@ class LoginScreen extends StatelessWidget {
           ),
         ],
       ),
-      
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){},
-        child: Text('login'),
-      ),
     );
   }
 }
@@ -76,16 +72,66 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Screen"),
+        title: Text("Start Swiping"),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate back to first screen when tapped.
-            Navigator.pushNamed(context, '/');
-          },
-          child: Text('Go back!'),
-        ),
+      body: Column(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                child: RaisedButton(
+                  onPressed: () {
+                    print('insert matching code');
+                  },
+                  child: Text(
+                    'Matcher',
+                    style: TextStyle(
+                      fontSize: 25.0,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 2.0, vertical: 2.0),
+                width: 150.0,
+                child: TextField(
+                  style: TextStyle(
+                    fontSize: 25.0,
+                  ),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Enter name',
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                child: RaisedButton(
+                  onPressed: () {
+                    print('insert matching code');
+                  },
+                  child: Text(
+                    'Matcher',
+                    style: TextStyle(
+                      fontSize: 25.0,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Text('Match'),
       ),
     );
   }
