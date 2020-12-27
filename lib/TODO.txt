@@ -1,2 +1,3 @@
--username uniqe constraints maken
--mogelijkheid om 'vorige' te doen bij room lobby verwijderen
+-swipen uitgebreid testen, soms error "RangeError (end): Invalid value: Not in inclusive range 0..2: 3" in "(package:movies_app/movieswiper.dart:126:27)"
+-Algemeen debuggen
+-renderoverflow error bij movieswiper
