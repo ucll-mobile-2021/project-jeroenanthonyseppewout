@@ -63,7 +63,7 @@ class _InfoScreenState extends State<InfoScreen> {
                 SizedBox(height: 5),
                 Text(QRInfo, style: TextStyle(color: Colors.grey), textAlign: TextAlign.justify),
                 SizedBox(height: 40),
-                Text("Extra", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white), textAlign: TextAlign.justify,),
+                Text("Authors", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white), textAlign: TextAlign.justify,),
                 SizedBox(height: 5),
                 Text(extraInfo, style: TextStyle(color: Colors.grey), textAlign: TextAlign.justify),
                 SizedBox(height: 20),

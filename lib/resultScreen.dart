@@ -116,9 +116,9 @@ class _ResultScreenState extends State<ResultScreen> {
   }
 
   void dataStream() {
-    if (playerAmount == 1000) {
-      getPlayerAmount();
-    }
+
+    int previousPlayerAmount = playerAmount;
+    getPlayerAmount();
 
     final db = database.reference();
 
@@ -144,7 +144,7 @@ class _ResultScreenState extends State<ResultScreen> {
         });
         playerAmount = 0;
       }
-      if (resultsIn != previousResultsIn) {
+      if (resultsIn != previousResultsIn || previousPlayerAmount != playerAmount) {
         setState(() {
           progress = playerAmount != 0 ? resultsIn / playerAmount : 100;
         });

@@ -109,7 +109,8 @@ class _RoomJoinerState extends State<RoomJoiner> {
         decoration:
             InputDecoration(hintText: 'Enter 6-digit code',  hintStyle: TextStyle(color: Colors.grey)),
         validator: (value) {
-        print("test");
+        print(data);
+
 
           if (value.isEmpty) {
             return 'No code entered';
@@ -117,11 +118,16 @@ class _RoomJoinerState extends State<RoomJoiner> {
           if (!_isSixDigits(value)) {
             return 'Please enter 6 digits code';
           }
+          if (retrievedData.toString().contains("votes")){
+          print("someone finished swiping");
+          return 'Some players have already finished siwping';
+          }
           if (retrievedData.toString() == "null"){
             retrievedData = "";
             return 'Room does not exist';
           }
           enteredCode = value;
+          print("no problems joining");
           return null;
         });
   }
@@ -158,14 +164,17 @@ class _RoomJoinerState extends State<RoomJoiner> {
       data = snapshot;
       _creatorFormKey.currentState.validate();
 
-      String memberString = snapshot.value['members'].toString().replaceAll("[", "").replaceAll("]", "").replaceAll(" ", "");
-      List participants = memberString.split(',');
-      String playerNumber = RandomString(5) ;
-      participants.add(username);
-      db.child('rooms').child(enteredCode).child("members").set(participants.toString().replaceAll("]", "").replaceAll("[", ""));
-
       //Navigate to room lobby if code found
-      if(retrievedData != ""){
+      if(retrievedData != "" && !retrievedData.toString().contains("votes")){
+
+        String memberString = snapshot.value['members'].toString().replaceAll("[", "").replaceAll("]", "").replaceAll(" ", "");
+        List participants = memberString.split(',');
+        String playerNumber = RandomString(5) ;
+        participants.add(username);
+        db.child('rooms').child(enteredCode).child("members").set(participants.toString().replaceAll("]", "").replaceAll("[", ""));
+
+        print("test redirection:");
+        print(retrievedData.toString().contains("votes"));
         roomName = snapshot.value['roomname'] as String;
         genre = snapshot.value['genre'] as String;
         String code = snapshot.key;
